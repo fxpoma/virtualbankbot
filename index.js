@@ -1,4 +1,5 @@
 require('colors')
 require('dotenv').config()
-require('./bot/bot')
-require('./bot/commands/commands')
+require('./db/db')
+require('./app/app')
+require('./app/commands/commands')
