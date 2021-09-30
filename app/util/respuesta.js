@@ -11,7 +11,8 @@ function respuesta(ctx, texto,
         {
             tipo='reply',
             contenido = [],
-            columnas = 1
+            columnas = 1,
+            reply_message = null
         }={}
     ) {
     let botones = []
@@ -25,7 +26,8 @@ function respuesta(ctx, texto,
     let teclado = Keyboard.make(botones,{columns:columnas}).inline()
     let adicional = {
         reply_markup: teclado.reply_markup,
-        parse_mode: 'HTML'
+        parse_mode: 'HTML',
+        reply_to_message_id:reply_message
     }
     if (tipo == 'reply') {
         ctx.reply(texto, adicional)
